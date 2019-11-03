@@ -1,0 +1,23 @@
+{% extends "book/common.html" %}
+{% block content %}
+
+<div class="add">
+        <a href="add/category" class="btn btn-primary" role="button" aria-disabled="true">Add</a>
+</div>
+<table class="table" id = "cat">
+    <thead>
+        <th>No</th>
+        <th>Category Name</th>
+        <th>Operation</th>
+    </thead>
+    <tbody>
+        {% for cat in object_list %}
+        <tr>
+            <td>{{ cat.id }}</td>
+            <td>{{ cat.category_text }}</td>
+            <td><a href="category/{{ cat.id }}" class="btn btn-primary" role="button" aria-disabled="true">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

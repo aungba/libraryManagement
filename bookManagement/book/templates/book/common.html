@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <script
+      type="text/javascript"
+      src="{% static 'book/bootstrap/jquery-3.2.1.min.js' %}"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'book/bootstrap/bootstrap.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'book/css/login.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'book/css/book.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'book/dataTable/dataTables.foundation.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'book/css/dataTable.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'book/toggle/bootstrap-toggle.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'book/flatpickr/flatpickr.min.css' %}"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'book/dataTable/datatables.css' %}"> -->
+
+    <script
+      type="text/javascript"
+      src="{% static 'book/bootstrap/fnFindCellRowIndexes.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'book/bootstrap/bootstrap.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'book/dataTable/datatables.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'book/dataTable/jquery.dataTables.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'book/dataTable/datatables.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'book/js/book.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'book/js/category.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'book/js/datepicker.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'book/toggle/bootstrap-toggle.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'book/flatpickr/flatpickr.js' %}"
+    ></script>
+  </head>
+
+  <body>
+    <div>
+      <div id="header">
+        <h3>Book Manangement</h3>
+        <div class="logout-view">
+          <a class="item" href="{% url 'logout' %}" role="button">Logout</a>
+        </div>
+      </div>
+      <div class="space"></div>
+      <div id="sidebar">
+        <div class="sidemenu">
+          {% if request.user.is_superuser %}
+          <div class="menuitem">
+            <a class="item" href="/admin" role="button">Admin</a>
+          </div>
+          <div class="spacer"></div>
+          {% endif %}
+          <div class="menuitem">
+            <a class="item" href="/" role="button">Book List</a>
+          </div>
+          <div class="spacer"></div>
+          <div class="menuitem">
+            <a class="item" href="/category" role="button">Book Category</a>
+          </div>
+          <div class="spacer"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>

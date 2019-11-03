@@ -1,0 +1,19 @@
+textarea#id_book_summary {
+    height: 150px;
+    max-height: 300px;
+}
+
+button#borrow_book[disabled], button#delete_book[disabled]{
+    cursor: not-allowed;
+}
+
+button#edit_button[disabled] {
+    cursor: not-allowed;
+    width: 55px;
+    margin-right: 3px;
+}
+
+a#borrow_book, button#return_book {
+    margin-left: 0px !important;
+    width: 62px;
+}

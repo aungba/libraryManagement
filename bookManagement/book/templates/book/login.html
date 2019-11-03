@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <script
+      type="text/javascript"
+      src="{% static 'book/bootstrap/jquery-3.2.1.min.js' %}"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'book/bootstrap/bootstrap.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'book/css/login.css' %}"
+    />
+  </head>
+  <body>
+    <div class="login_form">
+      <form
+        class="text-center border border-light p-5"
+        action="{% url 'login' %}"
+        method="POST"
+      >
+        {% csrf_token %}
+        <p class="h4 mb-4">Login</p>
+
+        <!-- Email -->
+        <input
+          type="text"
+          name="username"
+          id="defaultLoginFormEmail"
+          class="form-control mb-4"
+          placeholder="E-mail"
+        />
+
+        <!-- Password -->
+        <input
+          type="password"
+          name="password"
+          id="defaultLoginFormPassword"
+          class="form-control mb-4"
+          placeholder="Password"
+        />
+
+        <!-- Sign in button -->
+        <button class="btn btn-info btn-block my-4" type="submit">
+          Sign in
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

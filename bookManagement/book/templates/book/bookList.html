@@ -1,0 +1,95 @@
+{% extends "book/common.html" %} {% block content %}
+
+<table class="table" id="table">
+  <div class="add_book">
+    <a
+      href="book"
+      class="btn btn-primary"
+      id="add_book"
+      role="button"
+      aria-pressed="true"
+      >Add Book</a
+    >
+  </div>
+  <div class="search box">
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      placeholder="Title"
+      aria-label="Username"
+      aria-describedby="basic-addon1"
+    />
+    <input
+      type="text"
+      class="form-control"
+      id="author"
+      placeholder="Author"
+      aria-label="Username"
+      aria-describedby="basic-addon1"
+    />
+    <input
+      type="text"
+      class="form-control"
+      id="publisher"
+      placeholder="Publisher"
+      aria-label="Username"
+      aria-describedby="basic-addon1"
+    />
+    <input
+      type="text"
+      class="form-control"
+      id="release_date"
+      placeholder="Status"
+      aria-label="Username"
+      aria-describedby="basic-addon1"
+    />
+    <button class="btn btn-info btn-sm" id="search_book" type="button">
+      search
+    </button>
+    <div id="switch_pos">
+      <!-- <label class="switch"> -->
+      <input type="checkbox" id="toggle_switch" />
+      <!-- <span class="slider round"></span> -->
+      <!-- </label> -->
+      <label class="caption">Over two week due date</label>
+    </div>
+  </div>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Publisher</th>
+      <th>Date</th>
+      <th>Category</th>
+      <th>BookStatus</th>
+      <th>Status</th>
+      <th>Due date</th>
+      <th>Operation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- {% for book in object_list %}
+    <tr>
+    <td>{{ book.id }}</td>
+    <td>{{ book.book_title }}</td>
+    <td>{{ book.book_author }}</td>
+    <td>{{ book.book_publisher }}</td>
+    <td>{{ book.book_release_date }}</td>
+    <td>{{ book.book_category }}</td>
+    <td>{{ book.book_summary }}</td>
+    <td><a href="#" class="btn btn-primary" role="button" aria-pressed="true">Edit</a>
+        {% if book.status %}
+        <a href="#" class="btn btn-primary" role="button" aria-disabled="true">Delete</a>
+        <a href='{% url "borrow" book.id %}' class="btn btn-primary" role="button" aria-disabled="true">Borrow</a>
+        {% else %}
+        <a href="#" class="btn btn-danger" role="button" aria-disabled="true">Delete</a>
+        <a href='{% url "borrow" book.id %}' class="btn btn-primary" role="button" aria-disabled="true">Return</a>
+        {% endif %}
+    </td>
+    </tr>
+    {% endfor %} -->
+  </tbody>
+</table>
+{% endblock %}

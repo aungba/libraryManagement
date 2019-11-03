@@ -1,0 +1,12 @@
+{% extends "book/common.html" %} {% load crispy_forms_tags %} {% block content
+%}
+<form method="POST" class="book_register" id="book">
+  {% csrf_token %}
+
+  {{ form | crispy }}
+
+  <button class="btn btn-info btn-block my-4" id="register" type="button">
+    Save
+  </button>
+</form>
+{% endblock%}

@@ -1,0 +1,36 @@
+{% extends "book/common.html" %} {% load crispy_forms_tags %} {% block content
+%}
+<form method="POST" class="book_register" id="book">
+  {% csrf_token %}
+  <div class="col-14">
+    {{ form.book_title | as_crispy_field }}
+  </div>
+  <div class="row">
+    <div class="col-6">
+      {{ form.book_author | as_crispy_field }}
+    </div>
+    <div class="col-6">
+      {{ form.book_publisher | as_crispy_field }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      {{ form.book_release_date | as_crispy_field }}
+    </div>
+    <div class="col-6">
+      {{ form.book_category | as_crispy_field }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      {{ form.book_status | as_crispy_field }}
+    </div>
+  </div>
+
+  {{ form.book_summary | as_crispy_field }}
+
+  <button class="btn btn-info btn-block my-4" id="register" type="button">
+    Save
+  </button>
+</form>
+{% endblock%}

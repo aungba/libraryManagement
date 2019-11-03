@@ -1,0 +1,61 @@
+{% extends "book/common.html" %} {% block content %}
+<form method="POST" id="book_borrow">
+  {% csrf_token %}
+  <fieldset class="loan_border">
+    <legend class="loan_border">Book Loan</legend>
+
+    <div class="form-group">
+      <label for="book-title">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="book-title"
+        value="{{ book.book_title }}"
+        disabled
+      />
+    </div>
+    <div class="form-group">
+      <label for="book-author">Author</label>
+      <input
+        type="text"
+        class="form-control"
+        id="book-author"
+        value="{{ book.book_author }}"
+        disabled
+      />
+    </div>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input
+        type="text"
+        class="form-control"
+        id="category"
+        value="{{ book.book_category }}"
+        disabled
+      />
+    </div>
+    {% if book.status %}
+    <div class="form-group">
+      <label for="usr">Status</label>
+      <input
+        type="text"
+        class="form-control"
+        id="usr"
+        value="OnLoan"
+        disabled
+      />
+    </div>
+    {% endif %}
+    <div class="form-group">
+      <label for="id_Customer">Select Borrower</label>
+      <select id="id_Customer" class="form-control" name="Customer">
+        {% for user in users %}
+        <option value="{{ user }}" name="selectbox">{{ user }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <button class="btn btn-info" id="borrow" type="button">Borrow</button>
+  </fieldset>
+</form>
+{% endblock %}
